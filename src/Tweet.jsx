@@ -24,7 +24,7 @@ function Tweet({ id, visible }) {
       divStyle = { right: '20%' };
       break;
     default:
-      divStyle = { opacity: '0%' };
+      divStyle = { opacity: 0 };
   }
   const classes = visible
     ? `${styles.root} ${styles.rootVisible}`
