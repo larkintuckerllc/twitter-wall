@@ -3,7 +3,7 @@ import { getTokens, refreshTokens } from './auth';
 const corsAnywhere = process.env.REACT_APP_AUTH_CORS_ANYWHERE;
 const baseURL = 'https://api.twitter.com';
 
-const getUsersByUsername = (accessToken, username) => fetch(`${corsAnywhere}${baseURL}/2/users/by/username/${username}`, {
+const getUsersByUsername = (accessToken, username) => fetch(`${corsAnywhere}/${baseURL}/2/users/by/username/${username}`, {
   headers: { Authorization: `Bearer ${accessToken}` },
 });
 
@@ -23,7 +23,7 @@ export const usersLookup = async (username) => {
   return id;
 };
 
-const getUsersTweets = (accessToken, userId) => fetch(`${corsAnywhere}${baseURL}/2/users/${userId}/tweets`, {
+const getUsersTweets = (accessToken, userId) => fetch(`${corsAnywhere}/${baseURL}/2/users/${userId}/tweets`, {
   headers: { Authorization: `Bearer ${accessToken}` },
 });
 

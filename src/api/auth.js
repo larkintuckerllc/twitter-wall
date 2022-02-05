@@ -63,7 +63,7 @@ export const exchangeCodeforTokens = async (code) => {
     `redirect_uri=${encodeURIComponent(redirectEP)}&`,
     `code_verifier=${encodeURIComponent(challenge)}`,
   ].join('');
-  const response = await fetch(`${corsAnywhere}${tokenEP}`, {
+  const response = await fetch(`${corsAnywhere}/${tokenEP}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body,
@@ -85,7 +85,7 @@ export const refreshTokens = async () => {
     `refresh_token=${encodeURIComponent(refreshToken)}&`,
     `client_id=${encodeURIComponent(clientId)}`,
   ].join('');
-  const response = await fetch(`${corsAnywhere}${tokenEP}`, {
+  const response = await fetch(`${corsAnywhere}/${tokenEP}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body,
